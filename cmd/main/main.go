@@ -3,15 +3,21 @@ package main
 import (
 	"os"
 
-	"github.com/aws-sdk-go/aws"
 	"github.com/aws/aws-lambda-go/events"
 	"github.com/aws/aws-lambda-go/lambda"
+	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/session"
 	"github.com/aws/aws-sdk-go/service/dynamodb"
+	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbiface"
+
 	"github.com/unreal/go-serverless/pkg/handlers"
 )
 
 const tableName = "LambdaInGoUser"
+
+var (
+	dynaClient dynamodbiface.DynamoDBAPI
+)
 
 func main() {
 	region := os.Getenv("AWS_REGION")

@@ -10,7 +10,7 @@ import (
 	"github.com/aws/aws-sdk-go/service/dynamodb"
 	"github.com/aws/aws-sdk-go/service/dynamodb/dynamodbiface"
 
-	"github.com/unreal/go-serverless/pkg/handlers"
+	"github.com/unreal-kz/go-serverless/pkg/handlers"
 )
 
 const tableName = "LambdaInGoUser"
